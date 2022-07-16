@@ -26,3 +26,15 @@ nav a:hover {
   background-color: white;
   color: black;
 }
+.material-symbols-outlined {
+  font-size: 40px;
+}
+#website {
+  display: flex;
+  width: 400px;
+  height: 300px;
+}
+#website iframe {
+  height: 80%;
+  width: 80%;
+}

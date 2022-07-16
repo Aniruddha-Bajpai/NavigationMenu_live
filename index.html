@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
     <title>Navigation Bar</title>
   </head>
   <body>
@@ -27,5 +31,77 @@
         </li>
       </ul>
     </nav>
+    <h2>Multimedia Demo</h2>
+    <h1>Audio Tag</h1>
+    <span class="material-symbols-outlined"> music_note </span>
+    <audio id="audio1" controls loop>
+      <source src="../Downloads/All over in 10 seconds.mp3" />
+      <source src="../Downloads/all-over-in-10-seconds.mp3" />
+      <source src="../Downloads/example.mp3" />
+    </audio>
+    <!-- <span class="material-icons">&#xE87C;</span> -->
+    <!-- Icon  -->
+    <span class="material-symbols-outlined"> music_note </span>
+    <h1>Video tag</h1>
+    <video
+      src="../Downloads/All over in 10 seconds.mp4"
+      controls
+      width="400px"
+      height="300px"
+      id="video1"
+      loop
+    ></video>
+
+    <iframe
+      width="400"
+      height="315"
+      src="https://www.youtube.com/embed/J9b1RtYDleU"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+
+    <iframe
+      src="https://www.beta-labs.in"
+      frameborder="0"
+      width="400px"
+      height="300px"
+    ></iframe>
+    <div id="website"></div>
+    <script>
+      var x1 = document.getElementById("audio1");
+      var y1 = document.getElementsByClassName("material-symbols-outlined")[0];
+      console.log(x1);
+      console.log(y1);
+      y1.style.color = "blue";
+      y1.onclick = function () {
+        console.log("Icon tapped");
+        y1.style.color = "red";
+        x1.pause();
+      };
+
+      var x2 = document.getElementById("video1");
+      var y2 = document.getElementsByClassName("material-symbols-outlined")[1];
+
+      y2.onclick = function () {
+        console.log("Icon Tapped");
+        y2.style.color = "blue";
+        x2.setAttribute("src", "../Downloads/video2.mp4");
+      };
+
+      window.onscroll = function () {
+        z.setAttribute("src", "../Downloads/video2.mp4");
+      };
+      // visibilitychange :when browser tab is changed
+      document.addEventListener("visibilitychange", stopvideo);
+      function stopvideo() {
+        if (document.hidden) {
+          document.getElementById("video1").pause();
+        } else {
+          document.getElementById("video1").play();
+        }
+      }
+    </script>
   </body>
 </html>
